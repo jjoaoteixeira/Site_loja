@@ -1,0 +1,524 @@
+/* Cores baseadas em Azul Escuro */
+:root {
+    --primary-color: rgb(221, 214, 199); /* Azul escuro principal */
+    --secondary-color: rgb(129, 93, 59); /* Azul secundário */
+    --nav-bg-color: rgb(129, 93, 59); /* Cor de fundo para o nav */
+    --nav-item-bg-color: rgb(163, 159, 148); /* Cor de fundo para os itens de nav */
+    --nav-item-hover-color: rgb(129, 93, 59); /* Cor de fundo para o hover dos itens de nav */
+    --text-color: #000000; /* Cor do texto principal */
+    --bg-color: rgb(228, 223, 215); /* Cor de fundo principal */
+    --search-bg-color: rgb(171, 177, 177); /* Cor de fundo para a barra de pesquisa */
+}
+
+/* Estilos básicos */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.logo {
+    max-height: 130px; /* Ajuste o tamanho conforme necessário */
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-form input[type="text"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    background-color: var(--search-bg-color);
+}
+
+.search-form button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: rgb(129, 93, 59);
+}
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.cart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.cart-icon {
+    max-height: 30px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 10px;
+}
+
+.cart-count {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Estilos para o Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart-item-quantity {
+    font-size: 14px;
+    color: #888;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.confirmation-message {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+}
+/* Ajustes para layout responsivo */
+@media (min-width: 768px) {
+    .header-container {
+        padding: 0 40px;
+    }
+
+    .search-container {
+        padding: 0 20px;
+    }
+
+    .search-form input[type="text"] {
+        width: 100%;
+    }
+}
+
+/* Estilos para o Nav */
+nav {
+    background-color: var(--nav-bg-color);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: rgb(210, 199, 177);
+    color: rgb(129, 93, 59);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a:hover {
+    background-color: var(--nav-item-hover-color);
+    transform: translateY(-2px);
+}
+
+/* Estilos para o Carrossel de Imagens */
+#carousel {
+    position: relative;
+    width: 100%; /* Ocupa a largura total da página */
+    max-height: 500px; /* Define uma altura máxima para o carrossel */
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: none; /* Inicialmente, todos os slides estão ocultos */
+}
+
+.carousel-slide:first-child {
+    display: block; /* Exibe o primeiro slide inicialmente */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    max-height: 500px; /* Define uma altura máxima para as imagens */
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.05);
+}
+
+.caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots-container {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Ajustes para layout responsivo */
+@media (min-width: 768px) {
+    .header-container {
+        padding: 0 40px;
+    }
+
+    .search-container {
+        padding: 0 20px;
+    }
+
+    .search-form input[type="text"] {
+        width: 100%;
+    }
+}
+
+
+/* Estilos para o título de Produtos Relevantes */
+article h2 {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 30px; /* Espaçamento inferior */
+    font-size: 1rem; /* Tamanho da fonte */
+    color:rgb(129, 93, 59) ;
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    font-weight: bold; /* Negrito */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+}
+
+/* Estilos para o Catálogo de Mercadorias */
+#catalog {
+    overflow: hidden; /* Esconde a barra de rolagem horizontal */
+    padding: 20px; /* Espaçamento interno */
+    position: relative; /* Adicionado para posicionar os botões */
+}
+
+.catalog-container {
+    display: flex; /* Alterado para flexbox para alinhar os itens */
+    overflow-x: auto; /* Habilita a rolagem horizontal */
+    white-space: nowrap; /* Impede a quebra dos itens para outra linha */
+}
+
+.item {
+    width: 300px; /* Largura fixa para cada card */
+    flex: 0 0 auto; /* Mantém os cards com largura fixa */
+    margin-right: 20px; /* Espaçamento entre os cards */
+    background-color: rgb(210, 199, 177);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Evita que o texto ultrapasse o limite do card */
+    margin-bottom: 20px;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.item p {
+    margin-bottom: 10px;
+    overflow: hidden; /* Evita que o texto ultrapasse o limite do card */
+    text-overflow: ellipsis; /* Adiciona reticências (...) ao texto que ultrapassar */
+    white-space: nowrap; /* Garante que o texto não quebre para outra linha */
+}
+
+.item button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.item button:hover {
+    background-color: #5e8dbf; /* Tom mais escuro para hover */
+}
+
+/* Estilos para os botões de navegação */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para a mensagem de confirmação */
+.confirmation-message {
+    display: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+
+

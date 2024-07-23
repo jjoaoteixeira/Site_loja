@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&T Presentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo1.png" alt="Logo da Empresa" class="logo">
+            </div>
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" placeholder="Digite o que está procurando...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="cart-container">
+                <button class="cart-button">
+                    <img src="cart-icon.png" alt="Carrinho de Compras" class="cart-icon">
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+        <!-- Modal do Carrinho -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Carrinho de Compras</h2>
+        <div class="cart-items">
+            <!-- Os itens do carrinho serão inseridos aqui -->
+        </div>
+        <button id="finishPurchaseButton">Finalizar Compra</button>
+    </div>
+</div>
+<nav>
+    <ul>
+        <li><a href="#">Página Inicial</a></li>
+        <li><a href="#">Artigos</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- Carrossel de Imagens -->
+<section id="carousel">
+<div class="carousel-container">
+    <div class="carousel-slide">
+        <img src="img/BANNER.png" alt="nsa1">
+        <div class="caption">Sagrada Familia em Resina</div>
+    </div>
+    <div class="carousel-slide">
+        <img src="img/banner1.jpeg" alt="SaoBento">
+        <div class="caption">São Bento em Resina</div>
+    </div>
+    <div class="carousel-slide">
+        <img src="img/banner2.jpeg" alt="SaoJose">
+        <div class="caption">São José em Resina</div>
+    </div>
+    <!-- Adicione mais imagens conforme necessário -->
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+<div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <!-- Adicione mais dots conforme necessário -->
+</div>
+</section>
+
+
+<!-- Catálogo de Mercadorias -->
+<section id="catalog">
+    <!-- Itens do catálogo -->
+</section>
+<main>
+<article>
+    <h2>Produtos em Destaque</h2>
+    
+</article>
+
+<!-- Catálogo de Mercadorias -->
+<section id="catalog">
+    <button class="prev-button" onclick="scrollCatalog('prev')">❮</button>
+    <div class="catalog-container">
+    <div class="item">
+        <img src="img/presepio1.jpeg" alt="Presepio resina">
+        <h3>Presépio de Resina</h3>
+        <p>Presépio de resina 30cm, composto por 11 peças</p>
+        <p>Preço: R$ 1299,99</p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+    <div class="item">
+        <img src="img/presepio2.jpeg" alt="Presepio borracha">
+        <h3>Presépio de Borracha</h3>
+        <p>Presépio de Borracha 30cm, composto por 12 peças</p>
+        <p>Preço: R$ 1199,99</p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+    <div class="item">
+        <img src="img/card1.jpeg" alt="Sagrada Família">
+        <h3>Sagrada Família</h3>
+        <p>Imagem da Sagrada Família em resina importada de 40cm</p>
+        <p>Preço: R$ 499,99</p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+    <div class="item">
+        <img src="img/card2.jpeg" alt="Guadalupe">
+        <h3>Nossa Senhora de Guadalupe</h3>
+        <p>Imagem de Nossa Senhora de Guadalupe em resina importada de 40cm</p>
+        <p>Preço: R$ 419,99</p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+    <div class="item">
+        <img src="img/card3.jpeg" alt="Jose">
+        <h3>São José</h3>
+        <p>Imagem de São José em resina importada de 30cm</p>
+        <p>Preço: R$ 219,99</p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+</div>
+<button class="next-button" onclick="scrollCatalog('next')">❯</button>
+    <!-- Adicione mais itens conforme necessário -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Imagem do Produto">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+            <button id="addToCartButton">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+    <div id="confirmationMessage" class="confirmation-message">Produto adicionado ao carrinho!</div>
+
+    
+    
+</section>
+</main>
+
+
+<footer>
+<p>&copy; 2024 A&T Presentes</p>
+</footer>
+
+<script src="app.js"></script>
